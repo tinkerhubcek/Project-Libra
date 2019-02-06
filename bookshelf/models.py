@@ -4,7 +4,18 @@ from django.db import models
 class Book(models.Model):
     title=models.CharField(max_length=100)
     author=models.ForeignKey('Author',on_delete=models.SET_NULL,null=True)
-    Language=models.ForeignKey('Language',on_delete=models.SET_NULL,null=True)
+    langs=(
+        ('English',"English"),
+        ('Malayalam',"Malayalam"),
+        ('Hindi',"Hindi"),
+    )
+    language=models.CharField(
+        max_length=10,
+        choices=langs,
+        default=English,
+    )
+    def is_upperclass(self):
+        return '{0}'.format(self.language)True)
     Edition=models.IntegerField()
     def __str__(self):
         return self.title
@@ -34,7 +45,7 @@ class Language(models.Model):
         default=English,
     )
     def is_upperclass(self):
-        return self.language in (self.English, self.Malayalam)
+        return '{0}'.format(self.language)
         
 from datetime import date
 from django.contrib.auth.models import User        
