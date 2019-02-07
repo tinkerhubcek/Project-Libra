@@ -1,7 +1,11 @@
+from datetime import date
+
 from django.db import models
+
 
 # Create your models here.
 class Book(models.Model):
+    Code=models.ForeignKey('BarCode',on_delete=models.CASCADE,null=True)
     title=models.CharField(max_length=100)
     author=models.ForeignKey('Author',on_delete=models.SET_NULL,null=True)
     langs=(
@@ -30,24 +34,23 @@ class Author(models.Model):
     def __str__(self):
         return '{0},{1}'.format(self.first_name , self.last_name)
 
-# class Language(models.Model):
+#class Language(models.Model):
 #    English="English"
 #   Malayalam="Malayalam"
 #    Hindi="Hindi"
 #   langs=(
 #      ('English',"English"),
-#     ('Malayalam',"Malayalam"),
+#    ('Malayalam',"Malayalam"),
 #    ('Hindi',"Hindi"),
 #    )
-#    language=models.CharField(
+#   language=models.CharField(
 #        max_length=10,
 #        choices=langs,
-#        default=English,
-#    )
+#       default=English,
+#   )
 #   def is_upperclass(self):
 #        return '{0}'.format(self.language) 
         
-from datetime import date
 class A_Logger(models.Model):
     book=models.ForeignKey('Book',on_delete=models.SET_NULL,null=True)
     bar_code_no=models.ForeignKey('BarCode',on_delete=models.SET_NULL,null=True)
@@ -96,7 +99,7 @@ class Log_user(models.Model):
         default='CS',
     )
     def is_upperclass(self):
-        return '{0}'.format(self.department)
+        return '{0}'.format(self.Department)
     
     sem=(
         ('S1',"S1"),
@@ -111,14 +114,14 @@ class Log_user(models.Model):
     Semester=models.CharField(
         max_length=2,
         choices=sem,
-        default='S5',
-    )
+        default='S5')
     def is_upperclass(self):
         return '{0}'.format(self.Semester)
     def __str__(self):
         """String for representing the Model object."""
         return '{0}({1},{2})'.format(self.Name,self.Department,self.Semester) 
-  class BarCode(models.Model):
-    isbn=models.IntegerField()
-    
-    
+class BarCode(models.Model):
+    number_code=models.CharField(max_length=12)
+    #number_code=models.IntegerField()
+    def __str__(self):
+        return self.number_code
