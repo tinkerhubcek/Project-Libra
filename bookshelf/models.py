@@ -82,7 +82,7 @@ class A_Logger(models.Model):
 
     def __str__(self):
         """String for representing the Model object."""
-        return '{0}({1}) and {2}'.format(self.borrower,self.book.title,self.status)        
+        return '{0}({1}) and {2} {3}'.format(self.borrower,self.book.title,self.status,self.due_back)        
 class Log_user(models.Model):
     Name=models.CharField(max_length=100)
     depts=(
