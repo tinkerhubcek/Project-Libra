@@ -47,9 +47,10 @@ class Author(models.Model):
 #   def is_upperclass(self):
 #        return '{0}'.format(self.language) 
         
-from datetime import date       
+from datetime import date
 class A_Logger(models.Model):
     book=models.ForeignKey('Book',on_delete=models.SET_NULL,null=True)
+    bar_code_no=models.ForeignKey('ISBN',on_delete=models.SET_NULL,null=True)
     due_back = models.DateField(null=True, blank=True)
     borrower = models.ForeignKey('Log_user' , on_delete=models.SET_NULL, null=True, blank=True)
     
@@ -117,3 +118,6 @@ class Log_user(models.Model):
     def __str__(self):
         """String for representing the Model object."""
         return '{0}({1},{2})'.format(self.Name,self.Department,self.Semester) 
+  class ISBN(models):
+    
+    
