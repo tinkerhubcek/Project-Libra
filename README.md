@@ -1,6 +1,6 @@
+![](https://img.shields.io/badge/PRs%20-Welcome-green.svg)![](https://img.shields.io/badge/Created%20With%20%E2%9D%A4%EF%B8%8F-CEK%20Open%20Source%20Community-green.svg)
 Yep an LMS...
 Completed with Some Things....
 Still in WIP    
-## PRs are Welcome
-<a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="Powered by Django." title="Powered by Django." /></a>
-Made by CEK OPEN SOURCE COMMUNITY 
+<a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="Powered by Django." title="Powered by Django." /></a>   
+Made by [CEK OPEN SOURCE COMMUNITY](https://github.com/cek-open-source-club)
