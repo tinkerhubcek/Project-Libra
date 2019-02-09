@@ -1,2 +1,2 @@
-Django = 2.1
-Python = 3.6
+python=3.6
+django=2.1
