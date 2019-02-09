@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/PRs%20-Welcome-green.svg)
 ![](https://img.shields.io/badge/Created%20With%20%E2%9D%A4%EF%B8%8F-CEK%20Open%20Source%20Community-green.svg)    
-Yep an LMS...  
+Yep a Library Management System...  
 Clone this Repo,  
 Change Directory to this,  
 In the **command line**,execute. 
