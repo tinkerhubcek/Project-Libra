@@ -3,7 +3,7 @@
 Yep a Library Management System...  
 Clone this Repo,  
 Change Directory to this,  
-In the **command line**,execute. 
+In the **command line/ Terminal **,execute.   
 First install the Requirements for **python**,
 >pip install -r requirements.txt
 ----------  
