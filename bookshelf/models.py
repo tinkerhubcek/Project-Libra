@@ -88,10 +88,6 @@ class Log_user(models.Model):
     depts=(
      ('CS',"Computer Science"),
      ('IT',"Information Technology"),
-     ('EI',"Electronics and Instrumentation"),
-     ('EC',"Electronics and Communication"),
-     ('CE',"Civil"),
-     ('EEE',"Electrical & Electronics")
     )
     Department=models.CharField(
         max_length=2,
@@ -100,7 +96,18 @@ class Log_user(models.Model):
     )
     def is_upperclass(self):
         return '{0}'.format(self.Department)
-    
+    bch=(
+        ('B.Tech',"B.Tech"),
+        ('M.Tech',"M.Tech")
+    )
+    Branch=models.CharField(
+        max_length=7,
+        choices=bch,
+        default='B.Tech',
+    )
+    def is_upperclass(self):
+        return '{0}'.format(self.Branch)
+
     sem=(
         ('S1',"S1"),
         ('S2',"S2"),
