@@ -12,7 +12,6 @@ then,
 >python manage.py createsuperuser  
 
 1. Create the user,Then execute,  
-
 >python manage.py runserver   
 
 Copy the Server code in the Browser   
