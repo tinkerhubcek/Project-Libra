@@ -24,6 +24,12 @@ Completed with Some Things....
 
 Still in WIP....     
 
-It would be Great If You Could Contribute to it by Adding Views...   
+-----
+### Here are Some Sample Images.
+![Log In Page](/assets/log_in.png)
+![Manager Page](/assets/shelf.png)
+
+__It would be Great If You Could Contribute to it by Adding Views..__     
+Made by [CEK OPEN SOURCE COMMUNITY](https://github.com/cek-open-source-club)    
 <a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="Powered by Django." title="Powered by Django." /></a>   
-Made by [CEK OPEN SOURCE COMMUNITY](https://github.com/cek-open-source-club)
+
