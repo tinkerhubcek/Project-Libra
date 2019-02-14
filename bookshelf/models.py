@@ -79,10 +79,9 @@ class A_Logger(models.Model):
     class Meta:
         ordering = ['due_back']
         permissions = (("can_mark_returned", "Set book as returned"),)
-
     def __str__(self):
         """String for representing the Model object."""
-        return '{0}({1}) and {2} {3}'.format(self.borrower,self.book.title,self.status,self.due_back)        
+        return '{0}({1}) and {2}'.format(self.borrower,self.status,self.due_back)         
 class Log_user(models.Model):
     Name=models.CharField(max_length=100)
     depts=(
@@ -105,8 +104,8 @@ class Log_user(models.Model):
         choices=bch,
         default='B.Tech',
     )
-    def is_upperclass(self):
-        return '{0}'.format(self.Branch)
+    """def is_upperclass(self):
+        return '{0}'.format(self.Branch)"""
 
     sem=(
         ('S1',"S1"),
@@ -122,11 +121,11 @@ class Log_user(models.Model):
         max_length=2,
         choices=sem,
         default='S5')
-    def is_upperclass(self):
-        return '{0}'.format(self.Semester)
+    #def is_upperclass(self):
+    #    return '{0}'.format(self.Semester)
     def __str__(self):
         """String for representing the Model object."""
-        return '{0}({1},{2})'.format(self.Name,self.Department,self.Semester) 
+        return '{0}({1},{2},{3})'.format(self.Name,self.Branch,self.Department,self.Semester) 
 class BarCode(models.Model):
     number_code=models.CharField(max_length=12)
     #number_code=models.IntegerField()
