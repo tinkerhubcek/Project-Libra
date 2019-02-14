@@ -27,7 +27,7 @@ Still in WIP....
 -----
 ### Here are Some Sample Images.
 ![Log In Page](/assets/log_in.png)
-![Manager Page](/assets/shelf.png)
+![Manager Page](/assets/shelf1.png)
 
 __It would be Great If You Could Contribute to it by Adding Views..__     
 Made by [CEK OPEN SOURCE COMMUNITY](https://github.com/cek-open-source-club)    
