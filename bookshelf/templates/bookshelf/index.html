@@ -7,7 +7,13 @@
         <h3 align="center" >Shelf Admin</h3>
         <div>
             <h3>Books</h3>
-        </div>
+            {% for book in Book %}
+                {{ book.title }}
+            {% endfor %}    
+            </div>
+            
+            
+            
         <div>
             <h3>Users</h3>
         </div>
