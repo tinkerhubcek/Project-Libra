@@ -5,10 +5,11 @@ from .models import Book,Log_user,A_Logger,Author,BarCode
 def main_page(request):
     num_books = Book.objects.all().count()
     bar_num= BarCode.objects.all().count()
+    user_num= Log_user.objects.all().count()
     context = {
         'book': num_books,
         'bar_code':bar_num,
-        #'num_instances': num_instances,
+        'num_users': user_num,
         #'num_instances_available': num_instances_available,
         #'num_authors': num_authors,
     }
