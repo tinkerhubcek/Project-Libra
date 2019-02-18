@@ -1,24 +1,55 @@
 <html>
     <head>
         <title>Library Admin</title>
+        <style>
+                table, th, td {
+                  border: 1px solid black;
+                  border-collapse: collapse;
+                }
+                th, td {
+                  padding: 15px;
+                  text-align: left;
+                }
+                table#t01 {
+                  width: 100%;    
+                  background-color: #f1f1c1;
+                }
+                </style>
     </head>
     <body>
         <h1 align="center" >Welcome to the Library Administration Portal</h1>
         <h3 align="center" >Shelf Admin</h3>
+        <!--<div>
+            <strong>Books &nbsp;&nbsp;</strong>
         <div>
-            <strong>Books &nbsp;&nbsp;</strong> {{ book }}
-            </div>
-        <div>
-            <strong>Users&nbsp;&nbsp;</strong>{{ num_users }}
+            {{ num_users }}
         </div>
         <div>
             <strong>Barcodes &nbsp;&nbsp;</strong> {{bar_code}}
         </div>
         <div>
-            <strong>Books on Loan &nbsp;&nbsp;</strong>{{ book_onloan }}
+            <strong></strong>
         </div>
        <div>
-            <strong>Books Available&nbsp;&nbsp;</strong>{{ book_av }}
-        </div>
+            <strong>Books Available&nbsp;&nbsp;</strong>
+        </div>-->
+        <table id=#t01>
+        <tr>
+            <td> <strong>Books &nbsp;&nbsp;</strong> </td>
+            <td> {{ book }}</td>
+        </tr>
+        <tr>
+            <td><strong>Books on Loan &nbsp;&nbsp;</strong></td>
+            <td>{{ book_onloan }}</td>
+        </tr>
+        <tr>
+            <td>Users</td>
+            <td>{{ num_users }}</td>
+        </tr>
+        <tr>
+            <td>Books Available</td>
+            <td>{{ book_av }}</td>
+        </tr>
+    </table>
     </body>
 </html>
