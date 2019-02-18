@@ -19,20 +19,6 @@
     <body>
         <h1 align="center" >Welcome to the Library Administration Portal</h1>
         <h3 align="center" >Shelf Admin</h3>
-        <!--<div>
-            <strong>Books &nbsp;&nbsp;</strong>
-        <div>
-            {{ num_users }}
-        </div>
-        <div>
-            <strong>Barcodes &nbsp;&nbsp;</strong> {{bar_code}}
-        </div>
-        <div>
-            <strong></strong>
-        </div>
-       <div>
-            <strong>Books Available&nbsp;&nbsp;</strong>
-        </div>-->
         <table id=#t01>
         <tr>
             <td> <strong>Books &nbsp;&nbsp;</strong> </td>
@@ -43,11 +29,11 @@
             <td>{{ book_onloan }}</td>
         </tr>
         <tr>
-            <td>Users</td>
+            <td><strong>Users</strong></td>
             <td>{{ num_users }}</td>
         </tr>
         <tr>
-            <td>Books Available</td>
+            <td><strong>Books Available</strong></td>
             <td>{{ book_av }}</td>
         </tr>
     </table>
