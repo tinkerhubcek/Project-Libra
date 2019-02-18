@@ -1,5 +1,7 @@
-<html>
+
+<!-- <html>
     <head>
+       
         <title>Library Admin</title>
         <style>
                 table, th, td {
@@ -15,9 +17,12 @@
                   background-color: #f1f1c1;
                 }
                 </style>
-    </head>
-    <body>
-        <h1 align="center" >Welcome to the Library Administration Portal</h1>
+    </head> -->
+    <!-- <body> -->
+{% extends "base.html" %}
+
+
+       <!--  <h1 align="center" >Welcome to the Library Administration Portal</h1>
         <h3 align="center" >Shelf Admin</h3>
         <table id=#t01>
         <tr>
@@ -36,6 +41,18 @@
             <td><strong>Books Available</strong></td>
             <td>{{ book_av }}</td>
         </tr>
-    </table>
-    </body>
-</html>
+    </table> -->
+    {% block content %}
+    <h1>Local Library Home</h1>
+    <p>Welcome to LocalLibrary, a website developed by <em>Mozilla Developer Network</em>!</p>
+    <h2>Dynamic content</h2>
+    <p>The library has the following record counts:</p>
+    <ul>
+      <li><strong>Books:</strong> {{ num_books }}</li>
+      <li><strong>Copies:</strong> {{ num_instances }}</li>
+      <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+      <li><strong>Authors:</strong> {{ num_authors }}</li>
+    </ul>
+{% endblock %}
+   <!--  </body>
+</html> -->
