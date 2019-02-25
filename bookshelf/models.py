@@ -54,15 +54,15 @@ class Author(models.Model):
 class A_Logger(models.Model):
     book=models.ForeignKey('Book',on_delete=models.SET_NULL,null=True)
     bar_code_no=models.ForeignKey('BarCode',on_delete=models.SET_NULL,null=True)
-    due_back = models.DateField(null=True, blank=True)
+    #due_back = models.DateField(null=True, blank=True)
     borrower = models.ForeignKey('Log_user' , on_delete=models.SET_NULL, null=True, blank=True)
     
-    @property
-    def is_overdue(self):
+    #@property
+    """ def is_overdue(self):
         if self.due_back and date.today() > self.due_back:
             return True
         return False
-
+ """
     LOAN_STATUS = (
         ('On loan', 'On loan'),
         ('Available', 'Available'),
@@ -76,9 +76,9 @@ class A_Logger(models.Model):
         default='Available',
         help_text='Book availability')
 
-    class Meta:
+    """ class Meta:
         ordering = ['due_back']
-        permissions = (("can_mark_returned", "Set book as returned"),)
+        permissions = (("can_mark_returned", "Set book as returned"),) """
     def __str__(self):
         """String for representing the Model object."""
         return '{0}({1}) and {2}'.format(self.borrower,self.status,self.due_back)         
