@@ -17,5 +17,13 @@ def main_page(request):
         'book_av':av_book,
         #'num_authors': num_authors,
     }
-    
     return render(request, 'bookshelf/index.html', context=context)
+class  Books(generic.ListView):
+    model = Book 
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get the context
+        context = super(Book, self).get_context_data(**kwargs)
+        # Create any data and add it to the context
+        context['some_data'] = 'This is just some data'
+        return context  

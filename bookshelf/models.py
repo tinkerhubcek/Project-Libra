@@ -81,7 +81,7 @@ class A_Logger(models.Model):
         permissions = (("can_mark_returned", "Set book as returned"),) """
     def __str__(self):
         """String for representing the Model object."""
-        return '{0}({1}) and {2}'.format(self.borrower,self.status)         
+        return '({0}) and {1}'.format(self.borrower,self.status)         
 class Log_user(models.Model):
     Name=models.CharField(max_length=100)
     depts=(
