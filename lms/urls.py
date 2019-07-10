@@ -31,5 +31,6 @@ from django.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('bookshelf.urls')),
+    
     #path('', RedirectView.as_view(url='/admin/', permanent=True)),
 ] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
