@@ -1,0 +1,45 @@
+{% extends "bookshelf/base.html" %}
+  {% block content %}
+    <head>
+       
+        <title>Library Admin</title>
+        <style>
+                table, th, td {
+                  align-content: center;
+                  /* border: 1px ; */
+                  border-collapse: collapse;
+                }
+                th, td {
+                  padding: 15px;
+                  text-align: left;
+                }
+                table#t01 {
+                  width: 100%;    
+                  background-color: #23dd4b;
+                }
+                </style>
+    </head> 
+   <body>
+     <h1 align="center" >Welcome to the Library Administration Portal</h1>
+      <p align="center">This is The Library Management System made by CEK Open SOurce Community</p>
+        <h3 align="center" >Shelf Admin</h3>
+        <table align="center" id=#t01>
+        <tr>
+            <td> <strong>Books &nbsp;&nbsp;</strong> </td>
+            <td> {{ book }}</td>
+        </tr>
+        <tr>
+            <td><strong>Books on Loan &nbsp;&nbsp;</strong></td>
+            <td>{{ book_onloan }}</td>
+        </tr>
+        <tr>
+            <td><strong>Users</strong></td>
+            <td>{{ num_users }}</td>
+        </tr>
+        <tr>
+            <td><strong>Books Available</strong></td>
+            <td>{{ book_av }}</td>
+        </tr>
+    </table>
+    </body>
+{% endblock %}

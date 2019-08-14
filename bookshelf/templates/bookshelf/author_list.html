@@ -1,0 +1,16 @@
+{% extends "bookshelf/base.html" %}
+
+{% block content %}
+  <h1>Book List</h1>
+  {% if auth_list %}
+  <ul>
+    {% for auth in auth_list %}
+      <li>
+        <a href="{{ auth.get_absolute_url }}">{{ auth.first_name }}&nbsp;{{auth.last_name}}</a> {% comment %} ({{auth.author}}) {% endcomment %}
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no books in the library.</p>
+  {% endif %}       
+{% endblock %}
