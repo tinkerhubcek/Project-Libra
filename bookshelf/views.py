@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
+from .forms import BookForm
 from .models import Book,Log_user,A_Logger,Author,BarCode
 # Create your views here.
 def main_page(request):
@@ -28,3 +29,13 @@ class Authors(generic.ListView):
     context_object_name='auth_list'
     template='bookshelf/author_list.html'
     queryset=Author.objects.all()
+
+def book_add_view(request):
+    form=BookForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form=BookForm()
+    context={
+        'form':form
+    }
+    return render(request,"bookshelf/add_book.html",context)
