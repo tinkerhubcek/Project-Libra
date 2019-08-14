@@ -10,5 +10,24 @@
     "python.testing.pytestEnabled": false,
     "python.testing.nosetestsEnabled": false,
     "python.testing.unittestEnabled": false,
-    "python.testing.promptToConfigure": false
+    "python.testing.promptToConfigure": false,
+    "workbench.colorCustomizations": {
+        "list.activeSelectionForeground": "#e4cd00",
+        "list.inactiveSelectionForeground": "#aa0a7a",
+        "list.highlightForeground": "#1cf100bd",
+        "scrollbarSlider.activeBackground": "#84FFFF50",
+        "editorSuggestWidget.highlightForeground": "#c122e9",
+        "textLink.foreground": "#a2c916",
+        "progressBar.background": "#2a5f5f",
+        "pickerGroup.foreground": "#84FFFF",
+        "notificationLink.foreground": "#84FFFF",
+        "editorWidget.resizeBorder": "#0ba5ec",
+        "editorWidget.border": "#84FFFF",
+        "settings.modifiedItemIndicator": "#84FFFF",
+        "settings.headerForeground": "#84FFFF",
+        "panelTitle.activeBorder": "#30d36e",
+        "breadcrumb.activeSelectionForeground": "#84FFFF",
+        "menu.selectionForeground": "#0fe479",
+        "menubar.selectionForeground": "#00f5f5"
+    }
 }

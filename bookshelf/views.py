@@ -20,6 +20,11 @@ def main_page(request):
     return render(request, 'bookshelf/index.html', context=context)
 class Books(generic.ListView):
     model = Book
-    context_object_name = 'my_book_list'
+    context_object_name = 'book_list'
     template="bookshelf/book_list.html"   # your own name for the list as a template variable
     queryset = Book.objects.all() # Get 5 books containing the title war  # Specify your own template name/location """ """
+class Authors(generic.ListView):
+    model=Author
+    context_object_name='auth_list'
+    template='bookshelf/author_list.html'
+    queryset=Author.objects.all()
