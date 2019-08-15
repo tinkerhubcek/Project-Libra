@@ -39,3 +39,5 @@ def book_add_view(request):
         'form':form
     }
     return render(request,"bookshelf/add_book.html",context)
+
+
