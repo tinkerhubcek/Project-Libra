@@ -1,13 +1,13 @@
 from django import forms
 from .models import Book,Log_user,A_Logger,Author,BarCode
-code_choices=BarCode.objects.all()
+#code_choices=BarCode.objects.all()
 class BookForm(forms.ModelForm):
-    #code=forms.ModelMultipleChoiceField(queryset=BarCode.object.all())
+    Code=forms.ModelChoiceField(queryset=BarCode.objects.all(),widget=forms.Select(attrs={"class":"btn btn-secondary dropdown-toggle"}))
     title=forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Title of the Book",
     "class":"form-control"}))
-    author=forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Author of the Book",
+    author=forms.ModelChoiceField(queryset=Author.objects.all(),widget=forms.Select(attrs={"placeholder":"Author of the Book",
     "class":"form-control"}))
-    code=forms.ModelChoiceField(queryset=BarCode.objects.all(),widget=forms.ChoiceField(attrs={"class":"btn btn-secondary dropdown-toggle"}))
+    
     class Meta:
         model=Book
         fields='__all__'
