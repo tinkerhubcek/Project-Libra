@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
-from .forms import BookForm,BarcodeForm,AuthorForm
+from .forms import BookForm,BarcodeForm,AuthorForm,Log_userForm,LogForm
 from .models import Book,Log_user,A_Logger,Author,BarCode
 # Create your views here.
 def main_page(request):
@@ -48,6 +48,15 @@ def barcodeadd(request):
         'form':form
     }
     return render(request,"bookshelf/baradd.html",context)
+def useradd(request):
+    form=Log_userForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form=Log_userForm()
+    context={
+        'form':form
+    }
+    return render(request,"bookshelf/useradd.html",context)
 def authoradd(request):
     form=AuthorForm(request.POST or None)
     if form.is_valid():
@@ -57,3 +66,12 @@ def authoradd(request):
         'form':form
     }
     return render(request,"bookshelf/authoradd.html",context)
+def logger(request):
+    form=LogForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form=LogForm()
+    context={
+        'form':form
+    }
+    return render(request,"bookshelf/logger.html",context)

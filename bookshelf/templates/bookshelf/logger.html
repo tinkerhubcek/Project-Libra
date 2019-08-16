@@ -1,0 +1,11 @@
+{% extends "bookshelf/base.html" %}
+
+{% block content %}
+      <form method='POST'>{% csrf_token %}
+      {{form.as_p}}
+      <input type='submit' value='Save'/>
+      </form>
+      <hr>
+      <a href="/bookadd"><button class="btn btn-outline-primary" type='button'>Next</button></a>
+
+{% endblock %}
