@@ -8,6 +8,8 @@ Change Directory to this,
 In the **command line/ Terminal**,execute.   
 First install the Requirements for **python**,
 >pip install -r requirements.txt
+
+And for the PostgresQL Instructions goto [Here](https://gist.github.com/sirodoht/f598d14e9644e2d3909629a41e3522ad)
 ----------  
 then,
 >python manage.py createsuperuser  
