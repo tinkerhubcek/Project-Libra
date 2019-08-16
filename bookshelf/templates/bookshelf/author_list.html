@@ -1,7 +1,7 @@
 {% extends "bookshelf/base.html" %}
 
 {% block content %}
-  <h1>Book List</h1>
+  <h1>Author List</h1>
   {% if auth_list %}
   <ul>
     {% for auth in auth_list %}
@@ -11,6 +11,6 @@
     {% endfor %}
   </ul>
   {% else %}
-    <p>There are no books in the library.</p>
+    <p>There are no Authors Added</p>
   {% endif %}       
 {% endblock %}

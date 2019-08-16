@@ -29,6 +29,11 @@ class Authors(generic.ListView):
     context_object_name='auth_list'
     template='bookshelf/author_list.html'
     queryset=Author.objects.all()
+class Logged(generic.ListView):
+    model=A_Logger
+    context_object_Name='lgg'
+    template='bookshelf/a_logger_list.html'
+    queryset=A_Logger.objects.all()
 
 def book_add_view(request):
     form=BookForm(request.POST or None)

@@ -1,0 +1,15 @@
+{% extends "bookshelf/base.html" %}
+
+{% block content %}
+  <h1>Logger List</h1>
+  <ul>
+    {% for lg in object_list %}
+      <li>
+        <b class="text-danger">{{ lg.borrower }}</b> | <i class="text-success">{{ lg.book }}</i> | <small class="text-primary">{{ lg.status }}</small>
+      </li>
+    {% empty %}
+     <p>Not Rendered yet</p>   
+    {% endfor %}
+  </ul>
+     
+{% endblock %}
