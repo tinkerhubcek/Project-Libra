@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
-from .forms import BookForm
+from .forms import BookForm,BarcodeForm,AuthorForm,Log_userForm,LogForm
 from .models import Book,Log_user,A_Logger,Author,BarCode
 # Create your views here.
 def main_page(request):
@@ -29,6 +29,11 @@ class Authors(generic.ListView):
     context_object_name='auth_list'
     template='bookshelf/author_list.html'
     queryset=Author.objects.all()
+class Logged(generic.ListView):
+    model=A_Logger
+    context_object_Name='lgg'
+    template='bookshelf/a_logger_list.html'
+    queryset=A_Logger.objects.all()
 
 def book_add_view(request):
     form=BookForm(request.POST or None)
@@ -39,3 +44,39 @@ def book_add_view(request):
         'form':form
     }
     return render(request,"bookshelf/add_book.html",context)
+def barcodeadd(request):
+    form=BarcodeForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form=BarcodeForm()
+    context={
+        'form':form
+    }
+    return render(request,"bookshelf/baradd.html",context)
+def useradd(request):
+    form=Log_userForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form=Log_userForm()
+    context={
+        'form':form
+    }
+    return render(request,"bookshelf/useradd.html",context)
+def authoradd(request):
+    form=AuthorForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form=AuthorForm()
+    context={
+        'form':form
+    }
+    return render(request,"bookshelf/authoradd.html",context)
+def logger(request):
+    form=LogForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form=LogForm()
+    context={
+        'form':form
+    }
+    return render(request,"bookshelf/logger.html",context)

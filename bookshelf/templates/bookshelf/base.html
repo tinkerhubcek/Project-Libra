@@ -17,9 +17,13 @@
       {% block sidebar %}
         <ul class="nav navbar-nav">
           <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'logs' %}">All Logs</a></li>
           <li><a href="{% url 'books' %}">All books</a></li>
           <li><a href="{% url 'authors' %}">All authors</a></li>
-          <li><a href="{% url 'bookadd' %}">Add Books</a></li>
+          <li><a href="{% url 'useradd' %}">Add Users</a></li>
+          <li><a href="{% url 'logger' %}">Log Book Exchanges</a></li>
+          <li><a href="{% url 'barcodeadd' %}">Add Books</a></li>
+          
         </ul>
      {% endblock %}
       </div>
