@@ -3,14 +3,13 @@
 {% block content %}
   <h1>Author List</h1>
   {% if auth_list %}
-  <ul>
+<table class="table"
     {% for auth in auth_list %}
-      <li>
-        <a href="{{ auth.get_absolute_url }}">{{ auth.first_name }}&nbsp;{{auth.last_name}}</a> {% comment %} ({{auth.author}}) {% endcomment %}
-      </li>
+<tr>
+        <td><a href="{{ auth.get_absolute_url }}">{{ auth.first_name }}&nbsp;{{auth.last_name}}</a></td>
+</tr>
     {% endfor %}
-  </ul>
-  {% else %}
+</table>  {% else %}
     <p>There are no Authors Added</p>
   {% endif %}       
 {% endblock %}

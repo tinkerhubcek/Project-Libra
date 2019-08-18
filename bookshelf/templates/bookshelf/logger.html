@@ -3,10 +3,11 @@
 {% block content %}
 <h3 class="display-3">Log Books and Users</h3>
       <form method='POST'>{% csrf_token %}
-      {{form.as_table}}
+      <table class="table table-borderless
+">{{ form.as_table }}</table>
       <input type='submit' value='Save'/>
       </form>
       <hr>
-      <a href="/bookadd"><button class="btn btn-outline-primary" type='button'>Next</button></a>
+      <a href="/logs"><button class="button is-primary is-rounded" type='button'>Next</button></a>
 
 {% endblock %}
