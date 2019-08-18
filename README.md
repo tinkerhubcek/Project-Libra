@@ -6,25 +6,24 @@ Uses
 - Django 
 - PostgresQL
 - Bootstrap 
+- Bulma
 
 ---
 A Library Management System in Django on Postgres. 
 Clone this Repo,  
-Change Directory to this,  
+`cd Project-Libra`   
 In the **command line/ Terminal**,execute.   
 First install the Requirements for **python**,
->pip install -r requirements.txt
+>pip install -r requirements.txt 
 
-And for the PostgresQL Instructions goto [Here](https://gist.github.com/sirodoht/f598d14e9644e2d3909629a41e3522ad)
+-----
+### DB Initiaze
+Install `Postgres` and Create a Db with the Name `libra` with user as anyname but Chnage the Name in `lms/settings.py` and for the other PostgresQL Instructions goto [Here](https://gist.github.com/sirodoht/f598d14e9644e2d3909629a41e3522ad)
 
-----------  
-then,
->python manage.py createsuperuser  
-
-1. Create the user,Then execute,  
+----------    
 >python manage.py runserver   
 
-Copy the Server code in the Browser   
+Copy the Server code in the Browser   or open port [8000](http://localhost:8000/)
 
 ![](/assets/ezgif.com-video-to-gif.gif)   
 
@@ -34,9 +33,15 @@ Completed with most of the Things
 
 -----
 ### Here are Some Sample Images.
-![Log In Page](/assets/log_in.png)
-![Manager Page](/assets/shelf1.png)
-
+![Log In Page](/assets/l1.png)
+![Logger List Page](/assets/log1.png)
+![Books List](/assets/bl.png)
+![](/assets/uadd.png)
+![](/assets/lbu.png)
+The Next Things are done in Order when Clicked on `Add Books`
+![](/assets/bco.png)
+![](/assets/authoradd.png)
+![](/assets/bookadd.png)
 __PRs Welcome__
 
 ----
