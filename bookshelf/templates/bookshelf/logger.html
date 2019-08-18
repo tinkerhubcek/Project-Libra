@@ -3,8 +3,7 @@
 {% block content %}
 <h3 class="display-3">Log Books and Users</h3>
       <form method='POST'>{% csrf_token %}
-      <table class="table table-borderless
-">{{ form.as_table }}</table>
+      <table class="table table-borderless">{{ form.as_table }}</table>
       <input type='submit' value='Save'/>
       </form>
       <hr>

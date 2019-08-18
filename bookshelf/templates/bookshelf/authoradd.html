@@ -4,7 +4,7 @@
 <h3 class="display-3">Add Author</h3>
 <hr>
       <form method='POST'>{% csrf_token %}
-      {{form.as_p}}
+      <table class="table table-borderless">{{form.as_table}}</table>
       <input type='submit' value='Save'/>
       </form>
       <hr>
