@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/athul/.local/share/virtualenvs/lms-i3F7xEud/bin/python",
+    "python.pythonPath": "libra/bin/python",
     "python.testing.unittestArgs": [
         "-v",
         "-s",

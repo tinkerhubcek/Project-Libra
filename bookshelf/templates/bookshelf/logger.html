@@ -1,8 +1,9 @@
 {% extends "bookshelf/base.html" %}
 
 {% block content %}
+<h3 class="display-3">Log Books and Users</h3>
       <form method='POST'>{% csrf_token %}
-      {{form.as_p}}
+      {{form.as_table}}
       <input type='submit' value='Save'/>
       </form>
       <hr>

@@ -1,6 +1,7 @@
 {% extends "bookshelf/base.html" %}
 
 {% block content %}
+<h1 align="center">Add A New Book</h1>
       <form method='POST'>{% csrf_token %}
       {{form.as_p}}
       <input type='submit' value='Save'/>
