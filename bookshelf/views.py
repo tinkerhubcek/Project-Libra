@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.views import generic
+from rest_framework import viewsets
 from .forms import BookForm,BarcodeForm,AuthorForm,Log_userForm,LogForm
 from .models import Book,Log_user,A_Logger,Author,BarCode
+from .serializers import UserSerializer
 # Create your views here.
 def main_page(request):
     num_books = Book.objects.all().count()
@@ -80,3 +82,6 @@ def logger(request):
         'form':form
     }
     return render(request,"bookshelf/logger.html",context)
+class Userview(viewsets.ModelViewSet):
+    queryset=A_Logger.objects.all()
+    serializer_class=UserSerializer

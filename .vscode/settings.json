@@ -28,6 +28,19 @@
         "panelTitle.activeBorder": "#30d36e",
         "breadcrumb.activeSelectionForeground": "#84FFFF",
         "menu.selectionForeground": "#0fe479",
-        "menubar.selectionForeground": "#00f5f5"
-    }
+        "menubar.selectionForeground": "#00f5f5",
+        "activityBar.background": "#484848",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#081808",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "titleBar.activeBackground": "#2f2f2f",
+        "titleBar.inactiveBackground": "#2f2f2f99",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveForeground": "#e7e7e799",
+        "statusBar.background": "#2f2f2f",
+        "statusBarItem.hoverBackground": "#484848",
+        "statusBar.foreground": "#e7e7e7"
+    },
+    "peacock.color": "#2f2f2f"
 }
