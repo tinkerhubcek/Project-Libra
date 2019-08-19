@@ -6,12 +6,12 @@ class BookForm(forms.ModelForm):
         ('Malayalam',"Malayalam"),
         ('Hindi',"Hindi"),
     )
-    Code=forms.ModelChoiceField(queryset=BarCode.objects.all(),widget=forms.Select(attrs={"class":"btn btn-secondary dropdown-toggle"}))
+    Code=forms.ModelChoiceField(queryset=BarCode.objects.all(),widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}))
     title=forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Title of the Book",
     "class":"form-control"}))
     author=forms.ModelChoiceField(queryset=Author.objects.all(),widget=forms.Select(attrs={"placeholder":"Author of the Book",
-    "class":"btn btn-danger dropdown-toggle"}))
-    language=forms.ChoiceField(widget=forms.Select(attrs={"class":"btn btn-danger dropdown-toggle"}),choices=LANGS)
+    "class":"btn btn-primary dropdown-toggle"}))
+    language=forms.ChoiceField(widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}),choices=LANGS)
     class Meta:
         model=Book
         fields='__all__'
@@ -64,9 +64,9 @@ class LogForm(forms.ModelForm):
         ('Available', 'Available'),
         ('Reserved', 'Reserved'),
     )
-    bar_code_no=forms.ModelChoiceField(queryset=BarCode.objects.all(),widget=forms.Select(attrs={"class":"btn btn-secondary dropdown-toggle"}))
-    book=forms.ModelChoiceField(queryset=Book.objects.all(),widget=forms.Select(attrs={"class":"btn btn-secondary dropdown-toggle"}), required=True)
-    borrower=forms.ModelChoiceField(queryset=Log_user.objects.all(),widget=forms.Select(attrs={"class":"btn btn-secondary dropdown-toggle"}))
+    bar_code_no=forms.ModelChoiceField(queryset=BarCode.objects.all(),widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}))
+    book=forms.ModelChoiceField(queryset=Book.objects.all(),widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}), required=True)
+    borrower=forms.ModelChoiceField(queryset=Log_user.objects.all(),widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}))
     status=forms.ChoiceField(widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}),choices=STATUS)
     class Meta:
         model = A_Logger

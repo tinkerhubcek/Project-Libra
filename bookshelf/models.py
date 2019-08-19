@@ -52,8 +52,8 @@ class Author(models.Model):
 #        return '{0}'.format(self.language) 
         
 class A_Logger(models.Model):
-    book=models.ForeignKey('Book',on_delete=models.SET_NULL,null=True)
     bar_code_no=models.ForeignKey('BarCode',on_delete=models.SET_NULL,null=True)
+    book=models.ForeignKey('Book',on_delete=models.SET_NULL,null=True)
     #due_back = models.DateField(null=True, blank=True)
     borrower = models.ForeignKey('Log_user' , on_delete=models.SET_NULL, null=True, blank=True)
     
