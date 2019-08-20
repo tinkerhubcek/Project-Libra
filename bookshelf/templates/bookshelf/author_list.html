@@ -6,7 +6,7 @@
 <table class="table"
     {% for auth in auth_list %}
 <tr>
-        <td><a href="{{ auth.get_absolute_url }}">{{ auth.first_name }}&nbsp;{{auth.last_name}}</a></td>
+        <td><strong class="text-primary">{{ auth.first_name }}</strong> {{auth.last_name}}</a></td>
 </tr>
     {% endfor %}
 </table>  {% else %}
