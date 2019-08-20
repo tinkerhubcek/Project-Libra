@@ -3,7 +3,7 @@ from . import views
 from rest_framework import routers
 
 router=routers.DefaultRouter()
-router.register('Add User',views.Userview)
+router.register('Add Books',views.Book_API_View)
 
 urlpatterns = [
     path('', views.main_page, name='index'),
@@ -15,6 +15,6 @@ urlpatterns = [
     path('authoradd/',views.authoradd, name='authoradd'),
     path('useradd/',views.useradd, name='useradd'),
     path('log/',views.logger, name='logger'),
-    path('userss/',include(router.urls)),
+    path('API/',include(router.urls)),
     #path('book/<int:pk>', views.BookDetailView.as_view(), name='book-detail'), 
 ]

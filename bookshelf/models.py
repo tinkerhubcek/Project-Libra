@@ -1,5 +1,3 @@
-from datetime import date
-
 from django.db import models
 
 
@@ -75,10 +73,6 @@ class A_Logger(models.Model):
         blank=True,
         default='Available',
         help_text='Book availability')
-
-    """ class Meta:
-        ordering = ['due_back']
-        permissions = (("can_mark_returned", "Set book as returned"),) """
     def __str__(self):
         """String for representing the Model object."""
         return '({0}) and {1}'.format(self.borrower,self.status)         

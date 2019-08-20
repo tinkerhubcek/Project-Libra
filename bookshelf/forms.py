@@ -66,7 +66,7 @@ class LogForm(forms.ModelForm):
     )
     bar_code_no=forms.ModelChoiceField(queryset=BarCode.objects.all(),widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}))
     book=forms.ModelChoiceField(queryset=Book.objects.all(),widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}), required=True)
-    borrower=forms.ModelChoiceField(queryset=Log_user.objects.all(),widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}))
+    borrower=forms.ModelChoiceField(queryset=Log_user.objects.filter(),widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}))
     status=forms.ChoiceField(widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}),choices=STATUS)
     class Meta:
         model = A_Logger
