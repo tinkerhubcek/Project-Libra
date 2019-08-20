@@ -3,7 +3,7 @@ from django.views import generic
 from rest_framework import viewsets
 from .forms import BookForm,BarcodeForm,AuthorForm,Log_userForm,LogForm
 from .models import Book,Log_user,A_Logger,Author,BarCode
-from .serializers import UserSerializer,BookSerializer
+from .serializers import *
 # Create your views here.
 def main_page(request):
     num_books = Book.objects.all().count()
@@ -82,9 +82,18 @@ def logger(request):
         'form':form
     }
     return render(request,"bookshelf/logger.html",context)
-class User_API_View(viewsets.ModelViewSet):
-    queryset=A_Logger.objects.all()
-    serializer_class=UserSerializer
+class Code_API_View(viewsets.ModelViewSet):
+    queryset=BarCode.objects.all()
+    serializer_class=CodeSerializer
 class Book_API_View(viewsets.ModelViewSet):
     queryset=Book.objects.all()
     serializer_class=BookSerializer
+class Author_API_View(viewsets.ModelViewSet):
+    queryset=Author.objects.all()
+    serializer_class=AuthorSerializer
+class Log_API_View(viewsets.ModelViewSet):
+    queryset=A_Logger.objects.all()
+    serializer_class=LoggerSerializer
+class User_API_View(viewsets.ModelViewSet):
+    queryset=Log_user.objects.all()
+    serializer_class=UserSerializer

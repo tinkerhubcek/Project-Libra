@@ -30,24 +30,8 @@ class Author(models.Model):
     last_name = models.CharField(max_length=100)
 
     def __str__(self):
-        return '{0},{1}'.format(self.first_name , self.last_name)
+        return '{0} {1}'.format(self.first_name , self.last_name)
 
-#class Language(models.Model):
-#    English="English"
-#   Malayalam="Malayalam"
-#    Hindi="Hindi"
-#   langs=(
-#      ('English',"English"),
-#    ('Malayalam',"Malayalam"),
-#    ('Hindi',"Hindi"),
-#    )
-#   language=models.CharField(
-#        max_length=10,
-#        choices=langs,
-#       default=English,
-#   )
-#   def is_upperclass(self):
-#        return '{0}'.format(self.language) 
         
 class A_Logger(models.Model):
     bar_code_no=models.ForeignKey('BarCode',on_delete=models.SET_NULL,null=True)
