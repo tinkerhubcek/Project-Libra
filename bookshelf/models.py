@@ -1,9 +1,11 @@
 from datetime import date
-
 from django.db import models
 
 
 # Create your models here.
+class admin(models.Model):
+    User=models.CharField(max_length=50)
+    password=models.CharField(max_length=50)
 class Book(models.Model):
     Code=models.ForeignKey('BarCode',on_delete=models.CASCADE,null=False)
     title=models.CharField(max_length=100)
@@ -34,23 +36,6 @@ class Author(models.Model):
     def __str__(self):
         return '{0},{1}'.format(self.first_name , self.last_name)
 
-#class Language(models.Model):
-#    English="English"
-#   Malayalam="Malayalam"
-#    Hindi="Hindi"
-#   langs=(
-#      ('English',"English"),
-#    ('Malayalam',"Malayalam"),
-#    ('Hindi',"Hindi"),
-#    )
-#   language=models.CharField(
-#        max_length=10,
-#        choices=langs,
-#       default=English,
-#   )
-#   def is_upperclass(self):
-#        return '{0}'.format(self.language) 
-        
 class A_Logger(models.Model):
     bar_code_no=models.ForeignKey('BarCode',on_delete=models.SET_NULL,null=True)
     book=models.ForeignKey('Book',on_delete=models.SET_NULL,null=True)
