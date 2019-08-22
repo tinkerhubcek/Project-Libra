@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% block content %}
+<h3 align="center">Login</h3>
+{% if form.errors %}
+  <p class="text-danger">Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+  {% if user.is_authenticated %}
+    <p class="text-danger">Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+  {% else %}
+    <p class="text-danger">Please login to see this page.</p>
+  {% endif %}
+{% endif %}
+
+<form  method="post" action="{% url 'login' %}">
+{% csrf_token %}
+{% for field in form.visible_fields %}
+    <div class="form-group">
+      {{ field.label_tag }}
+      {% render_field field class="form-control" %}
+      {% if field.help_text %}
+        <small class="form-text text-muted">{{ field.help_text }}</small>
+      {% endif %}
+    </div>
+  {% endfor %}
+<button type="submit" class="btn btn-primary"/>Login</button>
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{# Assumes you setup the password_reset view in your URLconf #}
+
+
+{% endblock %}

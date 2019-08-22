@@ -1,8 +1,10 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views import generic
-from .forms import BookForm,BarcodeForm,AuthorForm,Log_userForm,LogForm
-from .models import Book,Log_user,A_Logger,Author,BarCode
+from .forms import *
+from .models import *
 # Create your views here.
+@login_required
 def main_page(request):
     num_books = Book.objects.all().count()
     bar_num= BarCode.objects.all().count()
@@ -35,6 +37,15 @@ class Logged(generic.ListView):
     template='bookshelf/a_logger_list.html'
     queryset=A_Logger.objects.all()
 
+""" def admin(request):
+    form=adminForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form=adminForm()
+    context={
+        'form':form
+    }
+    return render(request,"bookshelf/admin.html",context) """
 def book_add_view(request):
     form=BookForm(request.POST or None)
     if form.is_valid():
