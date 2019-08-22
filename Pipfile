@@ -9,6 +9,7 @@ pylint = "*"
 [packages]
 django = "*"
 psycopg2 = "*"
+django-widget-tweaks = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.7"

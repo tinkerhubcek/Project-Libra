@@ -3,9 +3,6 @@ from django.db import models
 
 
 # Create your models here.
-class admin(models.Model):
-    User=models.CharField(max_length=50)
-    password=models.CharField(max_length=50)
 class Book(models.Model):
     Code=models.ForeignKey('BarCode',on_delete=models.CASCADE,null=False)
     title=models.CharField(max_length=100)

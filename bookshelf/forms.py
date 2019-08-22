@@ -1,5 +1,5 @@
 from django import forms
-from .models import Book,Log_user,A_Logger,Author,BarCode,admin
+from .models import *
 class BookForm(forms.ModelForm):
     LANGS=(
         ('English',"English"),
@@ -71,10 +71,10 @@ class LogForm(forms.ModelForm):
     class Meta:
         model = A_Logger
         fields = ("__all__")
-class adminForm(forms.ModelForm):
+""" class adminForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)
     class Meta:
         model = admin
-        fields = ("User",'password')
+        fields = ("User",'password') """
 
 
