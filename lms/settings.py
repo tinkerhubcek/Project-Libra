@@ -25,7 +25,7 @@ SECRET_KEY = 'r+4hvsfoko&@-sbj73oj)qpjg2=4p@a*&m2cd@wremmul=7!qd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['swift-stingray-48.localtunnel.me']
+ALLOWED_HOSTS = []
 
 
 # Application definition
