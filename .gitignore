@@ -115,5 +115,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 bookshelf/migrations/
-
-.vscode/settings.json
+.vscode/

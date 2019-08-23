@@ -32,7 +32,7 @@ class Author(models.Model):
     def __str__(self):
         return '{0} {1}'.format(self.first_name , self.last_name)
 
-        
+
 class A_Logger(models.Model):
     bar_code_no=models.ForeignKey('BarCode',on_delete=models.SET_NULL,null=True)
     book=models.ForeignKey('Book',on_delete=models.SET_NULL,null=True)

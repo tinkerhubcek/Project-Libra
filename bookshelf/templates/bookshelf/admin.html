@@ -1,0 +1,11 @@
+{% extends "bookshelf/base.html" %}
+
+{% block content %}
+<h3 class="display-3">Admin Login</h3>
+<hr>
+      <form method='POST'>{% csrf_token %}
+      <table class="table table-borderless">{{form.as_table}}</table>
+      <input type='submit' value='Save'/>
+      </form>
+      <hr>
+{% endblock %}
