@@ -6,7 +6,7 @@
   <ul>
     {% for lg in object_list %}
       <li>
-        <b class="text-danger">{{ lg.borrower }}</b> | <i class="text-success">{{ lg.book }}</i> | <small class="text-primary">{{ lg.status }}</small>
+        <b class="text-danger">{{ lg.borrower }}</b> | <i class="text-success">{{ lg.book }}</i> | <small class="text-primary">{{ lg.bar_code_no }}</small>
       </li>
     {% empty %}
      <p>Not Rendered yet</p>   

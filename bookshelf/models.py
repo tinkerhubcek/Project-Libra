@@ -1,4 +1,3 @@
-from datetime import date
 from django.db import models
 
 
@@ -31,7 +30,8 @@ class Author(models.Model):
     last_name = models.CharField(max_length=100)
 
     def __str__(self):
-        return '{0},{1}'.format(self.first_name , self.last_name)
+        return '{0} {1}'.format(self.first_name , self.last_name)
+
 
 class A_Logger(models.Model):
     bar_code_no=models.ForeignKey('BarCode',on_delete=models.SET_NULL,null=True)
@@ -57,10 +57,6 @@ class A_Logger(models.Model):
         blank=True,
         default='Available',
         help_text='Book availability')
-
-    """ class Meta:
-        ordering = ['due_back']
-        permissions = (("can_mark_returned", "Set book as returned"),) """
     def __str__(self):
         """String for representing the Model object."""
         return '({0}) and {1}'.format(self.borrower,self.status)         

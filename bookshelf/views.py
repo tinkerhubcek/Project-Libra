@@ -1,8 +1,10 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views import generic
-from .forms import *
-from .models import *
+from rest_framework import viewsets
+from .forms import BookForm,BarcodeForm,AuthorForm,Log_userForm,LogForm
+from .models import Book,Log_user,A_Logger,Author,BarCode
+from .serializers import *
 # Create your views here.
 @login_required
 def main_page(request):
@@ -35,7 +37,7 @@ class Logged(generic.ListView):
     model=A_Logger
     context_object_Name='lgg'
     template='bookshelf/a_logger_list.html'
-    queryset=A_Logger.objects.all()
+    queryset=A_Logger.objects.filter(status__exact='On loan')
 
 """ def admin(request):
     form=adminForm(request.POST or None)
@@ -91,3 +93,18 @@ def logger(request):
         'form':form
     }
     return render(request,"bookshelf/logger.html",context)
+class Code_API_View(viewsets.ModelViewSet):
+    queryset=BarCode.objects.all()
+    serializer_class=CodeSerializer
+class Book_API_View(viewsets.ModelViewSet):
+    queryset=Book.objects.all()
+    serializer_class=BookSerializer
+class Author_API_View(viewsets.ModelViewSet):
+    queryset=Author.objects.all()
+    serializer_class=AuthorSerializer
+class Log_API_View(viewsets.ModelViewSet):
+    queryset=A_Logger.objects.all()
+    serializer_class=LoggerSerializer
+class User_API_View(viewsets.ModelViewSet):
+    queryset=Log_user.objects.all()
+    serializer_class=UserSerializer

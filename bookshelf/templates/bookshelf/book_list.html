@@ -5,7 +5,7 @@
   {% if book_list %}
   <table class="table is-hoverable">
     {% for book in book_list %}
-        <tr><td><a href="{{ book.get_absolute_url }}">{{ book.title }}</a> | {{book.author}}</td></tr>
+        <tr><td><b class="text-primary">{{ book.title }} </b>|{{book.author}} | {{book.Code}}</td></tr>
     {% endfor %}
   </table>
   {% else %}
