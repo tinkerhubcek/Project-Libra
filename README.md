@@ -19,7 +19,7 @@ First install the Requirements for **python**,
 
 -----
 ### DB Initiaze
-Install `Postgres` and Create a Db with the Name `libra` with user as anyname but Chnage the Name in `lms/settings.py` and for the other PostgresQL Instructions goto [Here](https://gist.github.com/sirodoht/f598d14e9644e2d3909629a41e3522ad)
+[Install](https://www.a2hosting.in/kb/developer-corner/postgresql/managing-postgresql-databases-and-users-from-the-command-line#Creating-PostgreSQL-databases) `Postgres` and Create a Db with the Name `libra` with user as anyname but Chnage the Name in `lms/settings.py` and for the other PostgresQL Instructions goto [Here](https://gist.github.com/sirodoht/f598d14e9644e2d3909629a41e3522ad)
 
 ----------    
 >python manage.py runserver   
