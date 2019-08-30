@@ -113,7 +113,7 @@ class Users(generic.ListView):
     model = Log_user
     context_object_name = 'log_user_list'
     template="bookshelf/log_user_list.html"   # your own name for the list as a template variable
-    queryset = Book.objects.all()
+    queryset = Log_user.objects.all()
 
 from django.contrib.postgres.search import SearchVector,SearchQuery
 class BookSearch(generic.ListView):
@@ -124,12 +124,12 @@ class BookSearch(generic.ListView):
              title__search=query
         )
         return object_list
-class UserSearch(generic.ListView):
-    model=Log_user
+class logSearch(generic.ListView):
+    model=A_Logger
     def get_queryset(self): # new
         query= self.request.GET.get('q')
-        object_list = Log_user.objects.filter(
-             Name__search=query
+        object_list = A_Logger.objects.filter(
+             borrower__search=query
         )
         return object_list
 class bsearch(generic.TemplateView):

@@ -22,7 +22,7 @@ urlpatterns = [
     path('bsearch/', views.bsearch.as_view(),name="booksearch"),
     path('usearch/', views.usearch.as_view(),name="usersearch"),
     path('booksearches/',views.BookSearch.as_view(), name="bsearch"),
-    path('usersearches/',views.UserSearch.as_view(), name="usearch"),
+    path('usersearches/',views.logSearch.as_view(), name="usearch"),
     path('API/',include(router.urls)),
     #path('book/<int:pk>', views.BookDetailView.as_view(), name='book-detail'), 
 ]
