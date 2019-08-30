@@ -1,7 +1,5 @@
-{% extends "bookshelf/base.html" %}
-
 {% block content %}
-  <h3 class="display-4">Logger List</h3>
+  <h3 class="display-4">User List</h3>
   <hr>
   <table class="table">
   <thead class="thead-dark">
@@ -13,9 +11,9 @@
   </thead>
     {% for lg in object_list %}
       <tr>
-        <td class="text-danger">{{ lg.borrower }}</td>
-        <td> <i class="text-success">{{ lg.book }}</i> </td>
-        <td><small class="text-primary">{{ lg.bar_code_no }}</small></td>
+        <td class="text-danger">{{ lg.Name }}</td>
+        <td> <i class="text-success">{{ lg.Department }}</i> </td>
+        <td><small class="text-primary">{{ lg.Semester }}</small></td>
       </tr>
     {% empty %}
      <p>Not Rendered yet</p>   

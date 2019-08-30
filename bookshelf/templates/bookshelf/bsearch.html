@@ -1,0 +1,9 @@
+{% extends "bookshelf/base.html" %}
+{% block content %}
+
+<h1>Book Search Page</h1>
+
+<form action="{% url 'bsearch' %}" method="get">
+  <input name="q" type="text" placeholder="Search...">
+</form>
+{% endblock content %}
