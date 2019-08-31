@@ -2,6 +2,11 @@
 
 {% block content %}
   <h1>Book List</h1>
+  <strong>Search Books:</strong>
+  <form action="{% url 'bsearch' %}" method="get">
+  <input class="form-control" name="q" type="text" placeholder="Type Book Title...">
+</form>
+<hr>
   {% if book_list %}
   <table class="table is-hoverable">
     <thead class="thead-dark">

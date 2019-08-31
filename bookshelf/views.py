@@ -40,15 +40,6 @@ class Logged(generic.ListView):
     template='bookshelf/a_logger_list.html'
     queryset=A_Logger.objects.filter(status__exact='On loan')
 
-""" def admin(request):
-    form=adminForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        form=adminForm()
-    context={
-        'form':form
-    }
-    return render(request,"bookshelf/admin.html",context) """
 def book_add_view(request):
     form=BookForm(request.POST or None)
     if form.is_valid():
@@ -132,7 +123,3 @@ class logSearch(generic.ListView):
              Name__search=query
         )
         return object_list
-class bsearch(generic.TemplateView):
-    template_name="bookshelf/bsearch.html"
-class usearch(generic.TemplateView):
-    template_name="bookshelf/usearch.html"
