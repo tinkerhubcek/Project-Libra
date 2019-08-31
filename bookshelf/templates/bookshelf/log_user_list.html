@@ -11,11 +11,11 @@
       <th scope="col">Book Code</th>
     </tr>
   </thead>
-    {% for lg in object_list %}
+    {% for nm in object_list %}
       <tr>
-        <td class="text-danger">{{ lg.Name }}</td>
-        <td> <i class="text-success">{{ lg.Department }}</i> </td>
-        <td><small class="text-primary">{{ lg.Semester }}</small></td>
+        <td class="text-danger">{{ nm.Name }}</td>
+        <td> <i class="text-success">{{ nm.Department }}</i> </td>
+        <td><small class="text-primary">{{ nm.Semester }}</small></td>
       </tr>
     {% empty %}
      <p>Not Rendered yet</p>   

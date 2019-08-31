@@ -3,8 +3,8 @@ from django.shortcuts import render
 from django.views import generic
 from django.db.models import Q
 from rest_framework import viewsets
-from .forms import BookForm,BarcodeForm,AuthorForm,Log_userForm,LogForm
-from .models import Book,Log_user,A_Logger,Author,BarCode
+from .forms import *
+from .models import *
 from .serializers import *
 # Create your views here.
 @login_required
@@ -36,7 +36,7 @@ class Authors(generic.ListView):
     queryset=Author.objects.all()
 class Logged(generic.ListView):
     model=A_Logger
-    context_object_Name='lgg'
+    context_object_Name='log_user_list'
     template='bookshelf/a_logger_list.html'
     queryset=A_Logger.objects.filter(status__exact='On loan')
 
@@ -125,11 +125,11 @@ class BookSearch(generic.ListView):
         )
         return object_list
 class logSearch(generic.ListView):
-    model=A_Logger
+    model=Log_user
     def get_queryset(self): # new
         query= self.request.GET.get('q')
-        object_list = A_Logger.objects.filter(
-             borrower__search=query
+        object_list = Log_user.objects.filter(
+             Name__search=query
         )
         return object_list
 class bsearch(generic.TemplateView):

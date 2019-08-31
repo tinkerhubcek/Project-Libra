@@ -5,7 +5,7 @@ from django.db import models
 class Book(models.Model):
     Code=models.ForeignKey('BarCode',on_delete=models.CASCADE,null=False)
     title=models.CharField(max_length=100)
-    author=models.ForeignKey('Author',on_delete=models.SET_NULL,null=True)
+    author=models.ForeignKey('Author',on_delete=models.CASCADE,null=True)
     langs=(
         ('English',"English"),
         ('Malayalam',"Malayalam"),
@@ -34,10 +34,10 @@ class Author(models.Model):
 
 
 class A_Logger(models.Model):
-    bar_code_no=models.ForeignKey('BarCode',on_delete=models.SET_NULL,null=True)
-    book=models.ForeignKey('Book',on_delete=models.SET_NULL,null=True)
+    bar_code_no=models.ForeignKey('BarCode',on_delete=models.CASCADE,null=True)
+    book=models.ForeignKey('Book',on_delete=models.CASCADE,null=True)
     #due_back = models.DateField(null=True, blank=True)
-    borrower = models.ForeignKey('Log_user' , on_delete=models.SET_NULL, null=True, blank=True)
+    borrower = models.ForeignKey('Log_user' , on_delete=models.CASCADE, null=True, blank=True)
     
     #@property
     """ def is_overdue(self):
