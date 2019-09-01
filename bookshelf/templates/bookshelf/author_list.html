@@ -3,10 +3,17 @@
 {% block content %}
   <h1>Author List</h1>
   {% if auth_list %}
-<table class="table"
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Author First Name</th>
+      <th scope="col">Last Name</th>
+    </tr>
+  </thead>
     {% for auth in auth_list %}
 <tr>
-        <td><strong class="text-primary">{{ auth.first_name }}</strong> {{auth.last_name}}</a></td>
+        <td><strong class="text-primary">{{ auth.first_name }}</strong></td>
+        <td> {{auth.last_name}}</td>
 </tr>
     {% endfor %}
 </table>  {% else %}

@@ -3,14 +3,24 @@
 {% block content %}
   <h3 class="display-4">Logger List</h3>
   <hr>
-  <ul>
+  <small>To remove the Log of a User , goto <u>url/admin</u> and Log in as The admin. Select <i>A_logger</i> and select the log and <b>Delete </b> it</small>
+  <table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Borrower's Name</th>
+      <th scope="col">Book Title</th>
+      <th scope="col">Book Code</th>
+    </tr>
+  </thead>
     {% for lg in object_list %}
-      <li>
-        <b class="text-danger">{{ lg.borrower }}</b> | <i class="text-success">{{ lg.book }}</i> | <small class="text-primary">{{ lg.bar_code_no }}</small>
-      </li>
+      <tr>
+        <td class="text-danger">{{ lg.borrower }}</td>
+        <td> <i class="text-success">{{ lg.book }}</i> </td>
+        <td><small class="text-primary">{{ lg.bar_code_no }}</small></td>
+      </tr>
     {% empty %}
      <p>Not Rendered yet</p>   
     {% endfor %}
-  </ul>
+  </table>
      
 {% endblock %}

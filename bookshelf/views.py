@@ -1,9 +1,10 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views import generic
+from django.db.models import Q
 from rest_framework import viewsets
-from .forms import BookForm,BarcodeForm,AuthorForm,Log_userForm,LogForm
-from .models import Book,Log_user,A_Logger,Author,BarCode
+from .forms import *
+from .models import *
 from .serializers import *
 # Create your views here.
 @login_required
@@ -35,19 +36,10 @@ class Authors(generic.ListView):
     queryset=Author.objects.all()
 class Logged(generic.ListView):
     model=A_Logger
-    context_object_Name='lgg'
+    context_object_Name='log_user_list'
     template='bookshelf/a_logger_list.html'
     queryset=A_Logger.objects.filter(status__exact='On loan')
 
-""" def admin(request):
-    form=adminForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        form=adminForm()
-    context={
-        'form':form
-    }
-    return render(request,"bookshelf/admin.html",context) """
 def book_add_view(request):
     form=BookForm(request.POST or None)
     if form.is_valid():
@@ -108,3 +100,26 @@ class Log_API_View(viewsets.ModelViewSet):
 class User_API_View(viewsets.ModelViewSet):
     queryset=Log_user.objects.all()
     serializer_class=UserSerializer
+class Users(generic.ListView):
+    model = Log_user
+    context_object_name = 'log_user_list'
+    template="bookshelf/log_user_list.html"   # your own name for the list as a template variable
+    queryset = Log_user.objects.all()
+
+from django.contrib.postgres.search import SearchVector,SearchQuery
+class BookSearch(generic.ListView):
+    model = Book
+    def get_queryset(self): # new
+        query= self.request.GET.get('q')
+        object_list = Book.objects.filter(
+             title__search=query
+        )
+        return object_list
+class logSearch(generic.ListView):
+    model=Log_user
+    def get_queryset(self): # new
+        query= self.request.GET.get('q')
+        object_list = Log_user.objects.filter(
+             Name__search=query
+        )
+        return object_list
