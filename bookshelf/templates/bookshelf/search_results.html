@@ -3,7 +3,7 @@
 {% block content %}
   <h1>Author List</h1>
   {% if bsearch %}
-<table class="table">
+<table class="table table-hover" >
     {% for books in bsearch %}
 <tr>
         <td><strong class="text-primary">{{ book.title }}</strong> {{book.author}}</a></td>

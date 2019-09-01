@@ -17,15 +17,15 @@
       <div class="container-fluid">
       {% block sidebar %}
         <ul class="nav navbar-nav">
-          <li><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="{% url 'logs' %}">All Logs</a></li>
-          <li><a href="{% url 'books' %}">All Books</a></li>
-          <li><a href="{% url 'users' %}">All Users</a></li>
-          <li><a href="{% url 'authors' %}">All Authors</a></li>
-          <li><a href="{% url 'useradd' %}">Add Users</a></li>
-          <li><a href="{% url 'logger' %}">Log Book Exchanges</a></li>
-          <li><a href="{% url 'barcodeadd' %}">Add Books</a></li>
-          
+          <li><a href="{% url 'index' %}" class="badge badge-primary">Home</a></li>
+          <li><a href="{% url 'logs' %}" class="badge badge-primary">All Logs</a></li>
+          <li><a href="{% url 'books' %}" class="badge badge-primary">All Books</a></li>
+          <li><a href="{% url 'users' %}" class="badge badge-primary">All Users</a></li>
+          <li><a href="{% url 'authors' %}" class="badge badge-primary">All Authors</a></li>
+          <li><a href="{% url 'useradd' %}" class="badge badge-primary">Add Users</a></li>
+          <li><a href="{% url 'logger' %}" class="badge badge-primary">Log Book Exchanges</a></li>
+          <li><a href="{% url 'barcodeadd' %}" class="badge badge-primary">Add Books</a></li>
+          <li><a href="{% url 'logout' %}" class="badge badge-danger">Logout</a></li>          
         </ul>
      {% endblock %}
       </div>
