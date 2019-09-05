@@ -1,20 +1,19 @@
 from rest_framework import serializers
 from .models import *
-
-class BookSerializer(serializers.ModelSerializer):
+class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
-        model=Book
-        fields=('url','Code','title','author','language','Edition')
+        model=Author
+        fields=('__all__')
 class CodeSerializer(serializers.ModelSerializer):
     class Meta:
         model=BarCode
         fields=('__all__')
-class AuthorSerializer(serializers.ModelSerializer):
-
-
+class BookSerializer(serializers.ModelSerializer):
+    author=AuthorSerializer()
+    Code=CodeSerializer()
     class Meta:
-        model=Author
-        fields=('__all__')
+        model=Book
+        fields=('url','Code','title','author','language','Edition')
 class LoggerSerializer(serializers.ModelSerializer):
     class Meta:
         model=A_Logger
