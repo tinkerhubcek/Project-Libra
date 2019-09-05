@@ -71,10 +71,17 @@ class LogForm(forms.ModelForm):
     class Meta:
         model = A_Logger
         fields = ("__all__")
-""" class adminForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput)
+class logdelform(forms.ModelForm):
+    STATUS = (
+        ('On loan', 'On loan'),
+        ('Available', 'Available'),
+        ('Reserved', 'Reserved'),
+    )
+    bar_code_no=forms.ModelChoiceField(queryset=BarCode.objects.all(),widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}))
+    borrower=forms.ModelChoiceField(queryset=Log_user.objects.all(),widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}))
+    status=forms.ChoiceField(widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}),choices=STATUS)
     class Meta:
-        model = admin
-        fields = ("User",'password') """
+        model = A_Logger
+        fields = ("bar_code_no",'status','borrower')
 
 
