@@ -9,11 +9,11 @@ pylint = "*"
 [packages]
 django = "*"
 psycopg2 = "*"
-
 djangorestframework = "*"
-
 django-widget-tweaks = "*"
-
+gunicorn = "*"
+whitenoise = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "3.7"
