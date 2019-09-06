@@ -1,4 +1,5 @@
-**This Project is only for self Hosting. Maybe you can forward a Port with Localtunnel or Ngrok but this was mainly made for self hosting inside a Server or a Local Machine.**      
+**This Project is only for self Hosting. Maybe you can forward a Port with Localtunnel or Ngrok but this was mainly made for self hosting inside a Server or a Local Machine.**          
+**Production Ready is in Production branch**                 
 ![](https://img.shields.io/badge/PRs%20-Welcome-green.svg)
 ![](https://img.shields.io/badge/Created%20With%20%E2%9D%A4%EF%B8%8F-CEK%20Open%20Source%20Community-green.svg)
 
