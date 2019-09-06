@@ -123,3 +123,17 @@ class logSearch(generic.ListView):
              Name__search=query
         )
         return object_list
+@login_required
+def Dellog(request):
+    form=logdelform(request.POST or None)
+    #logs=A_Logger.objects.filter(status__exact='On loan')
+    if form.is_valid():
+        logs=A_Logger.objects.all()
+        code = request.POST.get('bar_code_no')
+        item = A_Logger.objects.filter(bar_code_no__exact=code)       
+        item.delete()
+        form=logdelform()
+    context={
+        'form':form
+    }
+    return render(request,'bookshelf/delog.html',context)

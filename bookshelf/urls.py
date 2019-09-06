@@ -19,6 +19,7 @@ urlpatterns = [
     path('authoradd/',views.authoradd, name='authoradd'),
     path('useradd/',views.useradd, name='useradd'),
     path('log/',views.logger, name='logger'),
+    path('delog/',views.Dellog, name='delog'),
     #path('bsearch/', views.bsearch.as_view(),name="booksearch"),
     #path('usearch/', views.usearch.as_view(),name="usersearch"),
     path('booksearches/',views.BookSearch.as_view(), name="bsearch"),
