@@ -1,6 +1,7 @@
-Django==2.2.4
+-i https://pypi.org/simple/
 django-widget-tweaks==1.4.5
+django==2.2.8
 djangorestframework==3.10.2
 psycopg2==2.8.3
-pytz==2019.2
+pytz==2019.3
 sqlparse==0.3.0
