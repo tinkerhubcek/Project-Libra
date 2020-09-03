@@ -10,18 +10,16 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">User's Name</th>
-      <th scope="col">User Department</th>
-      <th scope="col">User Semester</th>
+      <th scope="col">User Address</th>
     </tr>
   </thead>
     {% for nm in object_list %}
       <tr>
         <td class="text-danger">{{ nm.Name }}</td>
-        <td> <i class="text-success">{{ nm.Department }}</i> </td>
-        <td><small class="text-primary">{{ nm.Semester }}</small></td>
+        <td> <strong class="text-success">{{ nm.Address }}</strong> </td>
       </tr>
     {% empty %}
-     <p>Not Rendered yet</p>   
+     <h3>User of the provided name not Added yet</h3>   <br/>
     {% endfor %}
   </table>
      

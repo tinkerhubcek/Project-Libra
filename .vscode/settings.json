@@ -1,5 +1,4 @@
 {
-    "python.pythonPath": "/home/athul/.local/share/virtualenvs/Project-Libra-1u1mf4R9/bin/python",
     "python.testing.unittestArgs": [
         "-v",
         "-s",

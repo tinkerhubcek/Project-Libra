@@ -7,10 +7,14 @@ class BookForm(forms.ModelForm):
         ('Hindi',"Hindi"),
     )
     Code=forms.ModelChoiceField(queryset=BarCode.objects.all(),widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}))
-    title=forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Title of the Book",
-    "class":"form-control"}))
     author=forms.ModelChoiceField(queryset=Author.objects.all(),widget=forms.Select(attrs={"placeholder":"Author of the Book",
     "class":"btn btn-primary dropdown-toggle"}))
+    title=forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Title of the Book",
+    "class":"form-control"}))
+    description=forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Title of the Book",
+    "class":"form-control"}))
+    awards=forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Title of the Book",
+    "class":"form-control"}))
     language=forms.ChoiceField(widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}),choices=LANGS)
     class Meta:
         model=Book
@@ -32,29 +36,10 @@ class AuthorForm(forms.ModelForm):
         model = Author
         fields = ("__all__")
 class Log_userForm(forms.ModelForm):
-    depts=(
-     ('CS',"Computer Science"),
-     ('IT',"Information Technology"),
-    )
-    bch=(
-        ('B.Tech',"B.Tech"),
-        ('M.Tech',"M.Tech")
-    )
-    sem=(
-        ('S1',"S1"),
-        ('S2',"S2"),
-        ('S3',"S3"),
-        ('S4',"S4"),
-        ('S5',"S5"),
-        ('S6',"S6"),
-        ('S7',"S7"),
-        ('S8',"S8"),
-    )
     Name=forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Enter the User's Name",
     "class":"form-control"}), required=True)
-    Department=forms.ChoiceField(widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}),choices=depts)
-    Branch=forms.ChoiceField(widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}),choices=bch)
-    Semester=forms.ChoiceField(widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}),choices=sem)
+    Address = forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Enter the User's Address",
+    "class":"form-control"}), required=True)
     class Meta:
         model = Log_user
         fields = ("__all__")

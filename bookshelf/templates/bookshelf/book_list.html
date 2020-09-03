@@ -12,15 +12,19 @@
     <thead class="thead-dark">
     <tr>
       <th scope="col">Book Title</th>
+      <th scope="col">Book Description</th>
       <th scope="col">Book Author</th>
       <th scope="col">Book Code</th>
+      <th scope="col">Book Awards</th>
     </tr>
   </thead>
     {% for book in book_list %}
         <tr>
         <td><b class="text-primary">{{ book.title }} </b></td>
+        <td>{{book.description}}</td>
         <td>{{book.author}} </td>
         <td> {{book.Code}}</td>
+        <td>{{book.awards}}</td>
         </tr>
     {% endfor %}
   </table>

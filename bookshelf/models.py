@@ -5,7 +5,9 @@ from django.db import models
 class Book(models.Model):
     Code=models.ForeignKey('BarCode',on_delete=models.CASCADE,null=False)
     title=models.CharField(max_length=100)
+    description = models.CharField(max_length=500)
     author=models.ForeignKey('Author',on_delete=models.CASCADE,null=True)
+    awards = models.CharField(max_length=400)
     langs=(
         ('English',"English"),
         ('Malayalam',"Malayalam"),
@@ -39,12 +41,6 @@ class A_Logger(models.Model):
     #due_back = models.DateField(null=True, blank=True)
     borrower = models.ForeignKey('Log_user' , on_delete=models.CASCADE, null=True, blank=True)
     
-    #@property
-    """ def is_overdue(self):
-        if self.due_back and date.today() > self.due_back:
-            return True
-        return False
- """
     LOAN_STATUS = (
         ('On loan', 'On loan'),
         ('Available', 'Available'),
@@ -59,51 +55,15 @@ class A_Logger(models.Model):
         help_text='Book availability')
     def __str__(self):
         """String for representing the Model object."""
-        return '({0}) and {1}'.format(self.borrower,self.status)         
-class Log_user(models.Model):
-    Name=models.CharField(max_length=100)
-    depts=(
-     ('CS',"Computer Science"),
-     ('IT',"Information Technology"),
-    )
-    Department=models.CharField(
-        max_length=2,
-        choices=depts,
-        default='CS',
-    )
-    def is_upperclass(self):
-        return '{0}'.format(self.Department)
-    bch=(
-        ('B.Tech',"B.Tech"),
-        ('M.Tech',"M.Tech")
-    )
-    Branch=models.CharField(
-        max_length=7,
-        choices=bch,
-        default='B.Tech',
-    )
-    """def is_upperclass(self):
-        return '{0}'.format(self.Branch)"""
+        return '({0}) and {1}'.format(self.borrower,self.status)
 
-    sem=(
-        ('S1',"S1"),
-        ('S2',"S2"),
-        ('S3',"S3"),
-        ('S4',"S4"),
-        ('S5',"S5"),
-        ('S6',"S6"),
-        ('S7',"S7"),
-        ('S8',"S8"),
-    )
-    Semester=models.CharField(
-        max_length=2,
-        choices=sem,
-        default='S5')
-    #def is_upperclass(self):
-    #    return '{0}'.format(self.Semester)
+class Log_user(models.Model):
+    Name = models.CharField(max_length=100)
+    Address = models.CharField(max_length=200)
     def __str__(self):
         """String for representing the Model object."""
-        return '{0}({1},{2},{3})'.format(self.Name,self.Branch,self.Department,self.Semester) 
+        return '{0}({1})'.format(self.Name,self.Address) 
+        
 class BarCode(models.Model):
     number_code=models.CharField(max_length=12)
     #number_code=models.IntegerField()

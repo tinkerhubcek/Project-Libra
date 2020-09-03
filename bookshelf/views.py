@@ -106,13 +106,12 @@ class Users(generic.ListView):
     template="bookshelf/log_user_list.html"   # your own name for the list as a template variable
     queryset = Log_user.objects.all()
 
-from django.contrib.postgres.search import SearchVector,SearchQuery
 class BookSearch(generic.ListView):
     model = Book
     def get_queryset(self): # new
         query= self.request.GET.get('q')
         object_list = Book.objects.filter(
-             title__search=query
+             Q(title__icontains=query)
         )
         return object_list
 class logSearch(generic.ListView):
@@ -120,7 +119,7 @@ class logSearch(generic.ListView):
     def get_queryset(self): # new
         query= self.request.GET.get('q')
         object_list = Log_user.objects.filter(
-             Name__search=query
+             Q(Name__icontains=query)
         )
         return object_list
 @login_required
