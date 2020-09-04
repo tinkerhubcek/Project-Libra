@@ -8,19 +8,30 @@ class Book(models.Model):
     description = models.CharField(max_length=500)
     author=models.ForeignKey('Author',on_delete=models.CASCADE,null=True)
     awards = models.CharField(max_length=400)
-    langs=(
-        ('English',"English"),
-        ('Malayalam',"Malayalam"),
-        ('Hindi',"Hindi"),
+    date_of_purchase = models.DateField()
+    MRP = models.FloatField()
+    CATEGORIES =[
+        ("Theology", "Theology"),
+        ("Philosophy", "Philosophy"),
+        ("Novel", "Novel"),
+        ("Short Story", "Short Story"),
+        ("Self Help ", "Self Help "),
+        ("Yathra Vivaranm", "Yathra Vivaranm"),
+        ("Travel", "Travel"),
+        ("Poetry", "Poetry"),
+        ("Samburna Crithikal", "Samburna Crithikal"),
+        ("Classic Series", "Classic Series"),
+        ("Geology", "Geology"),
+        ("Culture and Society", "Culture and Society"),
+        ("History", "History"),
+        ("Others", "Others"),
+    ]
+    category=models.CharField(
+        max_length=150,
+        choices=CATEGORIES,
+        default="Novel",
+        help_text="Book Type"
     )
-    language=models.CharField(
-        max_length=10,
-        choices=langs,
-        default='English',
-    )
-    def is_upperclass(self):
-        return '{0}'.format(self.language)
-    Edition=models.IntegerField()
     def __str__(self):
         return self.title
 
@@ -28,11 +39,10 @@ class Book(models.Model):
 
 class Author(models.Model):
     """Model representing an author."""
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
+    full_name = models.CharField(max_length=100)
 
     def __str__(self):
-        return '{0} {1}'.format(self.first_name , self.last_name)
+        return '{0}'.format(self.full_name)
 
 
 class A_Logger(models.Model):
@@ -43,8 +53,7 @@ class A_Logger(models.Model):
     
     LOAN_STATUS = (
         ('On loan', 'On loan'),
-        ('Available', 'Available'),
-        ('Reserved', 'Reserved'),
+        ('Available', 'Available')
     )
 
     status = models.CharField(

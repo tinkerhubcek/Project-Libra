@@ -6,14 +6,12 @@
 <table class="table table-hover">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Author First Name</th>
-      <th scope="col">Last Name</th>
+      <th scope="col">Author Full Name</th>
     </tr>
   </thead>
     {% for auth in auth_list %}
 <tr>
-        <td><strong class="text-primary">{{ auth.first_name }}</strong></td>
-        <td> {{auth.last_name}}</td>
+        <td><strong class="text-primary">{{ auth.full_name }}</strong></td>
 </tr>
     {% endfor %}
 </table>  {% else %}

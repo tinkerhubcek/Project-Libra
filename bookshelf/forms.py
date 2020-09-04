@@ -6,16 +6,37 @@ class BookForm(forms.ModelForm):
         ('Malayalam',"Malayalam"),
         ('Hindi',"Hindi"),
     )
+    CATEGORIES =[
+        ("Theology", "Theology"),
+        ("Philosophy", "Philosophy"),
+        ("Novel", "Novel"),
+        ("Short Story", "Short Story"),
+        ("Self Help ", "Self Help "),
+        ("Yathra Vivaranm", "Yathra Vivaranm"),
+        ("Travel", "Travel"),
+        ("Poetry", "Poetry"),
+        ("Samburna Crithikal", "Samburna Crithikal"),
+        ("Classic Series", "Classic Series"),
+        ("Geology", "Geology"),
+        ("Culture and Society", "Culture and Society"),
+        ("History", "History"),
+        ("Others", "Others"),
+    ]
+    YEARS= [x for x in range(1980,2030)]
     Code=forms.ModelChoiceField(queryset=BarCode.objects.all(),widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}))
     author=forms.ModelChoiceField(queryset=Author.objects.all(),widget=forms.Select(attrs={"placeholder":"Author of the Book",
     "class":"btn btn-primary dropdown-toggle"}))
     title=forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Title of the Book",
     "class":"form-control"}))
-    description=forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Title of the Book",
+    description=forms.CharField(widget=forms.Textarea(attrs={"placeholder":"Description of the Book",
     "class":"form-control"}))
-    awards=forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Title of the Book",
+    awards=forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Awards Received",
     "class":"form-control"}))
-    language=forms.ChoiceField(widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}),choices=LANGS)
+    category=forms.ChoiceField(widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}),choices=CATEGORIES)
+    date_of_purchase = forms.DateField(widget=forms.SelectDateWidget(years=YEARS))
+    MRP = forms.FloatField(widget=forms.TextInput(attrs={"placeholder":"Price of the Book",
+    "class":"form-control"}))
+
     class Meta:
         model=Book
         fields='__all__'
@@ -28,9 +49,7 @@ class BarcodeForm(forms.ModelForm):
         model = BarCode
         fields = ("__all__")
 class AuthorForm(forms.ModelForm):
-    first_name=forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Enter the First Name",
-    "class":"form-control"}), required=True)
-    last_name=forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Enter the Last Name",
+    full_name=forms.CharField(widget=forms.TextInput(attrs={"placeholder":"Enter the Name of the Author",
     "class":"form-control"}), required=True)
     class Meta:
         model = Author
@@ -46,7 +65,6 @@ class Log_userForm(forms.ModelForm):
 class LogForm(forms.ModelForm):
     STATUS = (
         ('On loan', 'On loan'),
-        ('Available', 'Available'),
         ('Reserved', 'Reserved'),
     )
     bar_code_no=forms.ModelChoiceField(queryset=BarCode.objects.all(),widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}))
@@ -59,7 +77,6 @@ class LogForm(forms.ModelForm):
 class logdelform(forms.ModelForm):
     STATUS = (
         ('On loan', 'On loan'),
-        ('Available', 'Available'),
         ('Reserved', 'Reserved'),
     )
     bar_code_no=forms.ModelChoiceField(queryset=BarCode.objects.all(),widget=forms.Select(attrs={"class":"btn btn-primary dropdown-toggle"}))

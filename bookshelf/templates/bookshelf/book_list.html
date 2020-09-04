@@ -4,7 +4,7 @@
   <h1>Book List</h1>
   <strong>Search Books:</strong>
   <form action="{% url 'bsearch' %}" method="get">
-  <input class="form-control" name="q" type="text" placeholder="Type Book Title...">
+  <input class="form-control" name="q" type="text" placeholder="Type Book Title or Author's Name...">
 </form>
 <hr>
   {% if book_list %}
@@ -14,8 +14,11 @@
       <th scope="col">Book Title</th>
       <th scope="col">Book Description</th>
       <th scope="col">Book Author</th>
+      <th scope="col">Book Category</th>
       <th scope="col">Book Code</th>
       <th scope="col">Book Awards</th>
+      <th scope="col">Book Price</th>
+      <th scope="col">Date of Purchase</th>
     </tr>
   </thead>
     {% for book in book_list %}
@@ -23,8 +26,11 @@
         <td><b class="text-primary">{{ book.title }} </b></td>
         <td>{{book.description}}</td>
         <td>{{book.author}} </td>
+        <td>{{book.category}}</td>
         <td> {{book.Code}}</td>
         <td>{{book.awards}}</td>
+        <td>₹{{book.MRP}}</td>
+        <td>{{book.date_of_purchase}}</td>
         </tr>
     {% endfor %}
   </table>

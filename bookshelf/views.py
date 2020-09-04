@@ -111,7 +111,7 @@ class BookSearch(generic.ListView):
     def get_queryset(self): # new
         query= self.request.GET.get('q')
         object_list = Book.objects.filter(
-             Q(title__icontains=query)
+            Q(title__icontains=query) | Q(author__full_name__icontains=query) | Q(MRP__icontains=query) | Q(category__icontains=query)
         )
         return object_list
 class logSearch(generic.ListView):
